@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" ng-app="WXApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+
+</head>
+<body>
+    <style>
+        .demo {
+            margin-top: 30px;
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+
+        .demoX {
+            /*margin-top: 30px;
+            margin-left: 100px;*/
+            margin:3px 3px 3px 3px;
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        .demoX2 {
+            /*margin-top: 30px;
+            margin-left: 100px;*/
+            width: 100px;
+            height: 200px;
+            background: yellow;
+        }
+        /*单边效果*/
+        .demo2 {
+            -webkit-box-shadow: -12px 0 0 green, 0 -12px 0 blue, 0 12px 0 red, 12px 0 0 yellow;
+            -moz-box-shadow: -12px 0 0 green, 0 -12px 0 blue, 0 12px 0 red, 12px 0 0 yellow;
+            box-shadow: -12px 0 0 green, 0 -12px 0 blue, 0 12px 0 red, 12px 0 0 yellow;
+        }
+
+        .demo3 {
+            box-shadow: -2px 0 5px green,0 -2px 5px blue,0 2px 5px red,2px 0 5px yellow;
+        }
+
+        /*第一个阴影模糊半径值小于第二阴影模糊半径，前面的永远压住后边的*/
+        .demo5 {
+            box-shadow: 0 0 8px yellow,0 0 20px blue;
+        }
+
+        /*第一个阴影模糊半径大于第二阴影模糊半径，前面的永远压住后边的*/
+        .demo6 {
+            box-shadow: 0 0 20px yellow, 0 0 8px blue;
+        }
+        /*设置透明值0.5*/
+        .demo8 {
+            box-shadow: 0 0 5px rgba(250,0,0,0.5);
+        }
+        /*border 与box-shadow 在半径值越大的时候差别越大*/
+        .demo12 {
+            border: 20px solid red;
+        }
+        /**/
+        .demo13 {
+            box-shadow: 0 0 0 20px red;
+        }
+
+        /**/
+        .demo14 {
+            box-shadow: inset 0 0 5px 1px red;
+        }
+
+        .colorX_Green {
+            background: green;
+        }
+
+        .floatZ {
+            position: relative;
+            float:left;
+            /*display: inline-block;
+            *display: inline;*/
+        }   
+
+        .shadow {
+            position: relative;
+            display: inline-block;
+            *display: inline;
+        }      
+
+        /*.shadow::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -moz-box-shadow: inset 0 0 5px 1px red;
+                -webkit-box-shadow: inset 0 0 5px 1px red;
+                box-shadow: 0 0 1px 4px gray;
+            }*/
+    </style>
+
+    <!--<div class="demo demo2"></div>
+    <div class="demo demo3"></div>
+    <div class="demo demo5"></div>
+    <div class="demo demo6"></div>
+    <div class="demo demo8"></div>
+
+    <div class="demo demo12"></div>
+    <div class="demo demo13"></div>-->
+
+    <div class="demoX2 colorX_Green floatZ"></div>
+    <div class="demoX floatZ"></div>
+    <div class="demoX floatZ"></div>
+    <div class="demoX floatZ"></div>
+</body>
+</html>
