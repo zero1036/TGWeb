@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="newApp">
+<head>
+    <title>Simple app</title>
+    <style>
+        .error {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="FirstController">
+        <!--<my-directive></my-directive>-->
+        <!--<div my-directive2 ng-model="number">{{number}}</div>-->
+        <input my-directive2 ng-model="number" value="{{number}}" />
+    </div>
+    <script src="http://cdn.bootcss.com/angular.js/1.2.19/angular.js"></script>
+    <script>
+        var app = angular.module('newApp', []);
+
+        app.controller('FirstController', function ($scope) {
+            $scope.number = 159;
+        });
+
+        app.directive('myDirective', function () {
+            return {
+                restrict: 'E',
+                template: '<a href="http://www.baidu.com">Click me to go to Baidu</a>'
+            };
+        });
+
+        app.directive('myDirective2', function () {
+            return {
+                require: '?ngModel',
+                restrict: 'A',
+                link: function (scope, el, attrs, ngModel) {
+                    el.on('blur', function () {
+                        if (ngModel.$modelValue == undefined || ngModel.$modelValue == null) return;
+
+                        if (ngModel.$modelValue != 11) {
+                            el.addClass("error");
+                        }
+                        else {
+                            el.removeClass("error");
+                        }
+                    });
+
+                }
+            };
+
+
+        });
+    </script>
+</body>
+</html>
