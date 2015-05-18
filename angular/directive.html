@@ -10,9 +10,7 @@
 </head>
 <body>
     <div ng-controller="FirstController">
-        <!--<my-directive></my-directive>-->
-        <!--<div my-directive2 ng-model="number">{{number}}</div>-->
-        <input my-directive2 ng-model="number" value="{{number}}" />
+        <my-directive></my-directive>
     </div>
     <script src="http://cdn.bootcss.com/angular.js/1.2.19/angular.js"></script>
     <script>
@@ -29,27 +27,6 @@
             };
         });
 
-        app.directive('myDirective2', function () {
-            return {
-                require: '?ngModel',
-                restrict: 'A',
-                link: function (scope, el, attrs, ngModel) {
-                    el.on('blur', function () {
-                        if (ngModel.$modelValue == undefined || ngModel.$modelValue == null) return;
-
-                        if (ngModel.$modelValue != 11) {
-                            el.addClass("error");
-                        }
-                        else {
-                            el.removeClass("error");
-                        }
-                    });
-
-                }
-            };
-
-
-        });
     </script>
 </body>
 </html>
